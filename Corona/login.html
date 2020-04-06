@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style type="text/css">
+        body {
+            background-size: auto;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .body-cont {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            background: linear-gradient(to bottom right, #c0392b, #8e44ad);
+            background-size: 400% 400%;
+            animation: gradientFade 12s ease infinite;
+        }
+        
+        @keyframes gradientFade {
+            0% {
+                background-position: 47% 0%;
+            }
+            50% {
+                background-position: 54% 100%;
+            }
+            100% {
+                background-position: 47% 0%;
+            }
+        }
+    </style>
+    <style type="text/css">
+        #log {
+            width: 100px;
+            align-content: center;
+        }
+        
+        .login td {
+            color: white;
+            font-weight: bold;
+            font-family: 'Helvetica';
+            font-size: 14px;
+        }
+        
+        #log-tab {
+            margin-left: 40%;
+            padding-top: 20px;
+        }
+        
+        td {
+            padding-top: 30px;
+            text-shadow: 2px 4px 8px #333333;
+        }
+        
+        td input {
+            box-shadow: 2px 4px 8px #333333;
+        }
+        
+        input {
+            border-radius: 10px;
+            width: 200px;
+            height: 20px;
+            border-bottom: 1.5px solid #fe0d92;
+            border-right: 1px solid #fe0d6a;
+            border-top: none;
+            border-left: none;
+            background: transparent;
+            color: white;
+            font-family: 'Helvetica';
+            font-size: 14px;
+        }
+    </style>
+    <style>
+        .error {
+            color: red;
+            font-style: italic;
+        }
+    </style>
+    <style type="text/css">
+        .in-header {
+            width: 1000px;
+            height: 100%;
+            margin: auto;
+        }
+        
+        .logo-container {
+            height: 100%;
+            display: table;
+            float: left;
+        }
+        
+        .logo-container h1 {
+            color: white;
+            height: 100%;
+            display: table-cell;
+            vertical-align: middle;
+            font-family: 'Arial';
+            font-size: 32px;
+            font-weight: 100;
+            text-shadow: 2px 4px 8px #333333;
+        }
+        
+        .logo-container h1 span {
+            font-weight: 800;
+        }
+        
+        .navig {
+            float: right;
+            height: 100%;
+        }
+        
+        .navig a {
+            height: 100%;
+            display: table;
+            float: left;
+            padding: 0 20px;
+        }
+        
+        .navig a li {
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+            color: #fff;
+            font-family: 'Helvetica';
+            font-size: 16px;
+        }
+        
+        .btn {
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 2px 15px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        
+        .btn1 {
+            background: rgba(255, 255, 255, 0.0);
+            color: white;
+            border: 1.5px solid #fff;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .btn1:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #ad5389;
+        }
+        
+        .btn2 {
+            background: rgba(255, 0, 0, 0.0);
+            color: white;
+            border: 1.5px solid #fff;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .btn2:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #ad5389;
+        }
+        
+        .btn3 {
+            background: rgba(255, 255, 255, 0.0);
+            color: white;
+            border: 1.5px solid #fff;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .btn3:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #ad5389;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="fbody">
+        <div class="in-header">
+            <div class="logo-container">
+                <h1>GAME<span>SITE</span></h1>
+            </div>
+            <ul class="navig">
+
+                <button class="btn btn1"><a href="index.html"><li class="active">REGISTER</li></a></button>
+                <button class="btn btn2"><a href="#"><li>ABOUT ME</li></a></button>
+                <button class="btn btn3"><a href="#"><li>REACH ME AT</li></a></button>
+            </ul>
+        </div>
+        <div class="body-cont">
+            <div class="login">
+                <form id="loginform" method="POST" action="gamecenter.html" onsubmit="return Validate()" name="vform">
+                    <table id="log-tab">
+                        <tr>
+                            <td>
+                                <h1 style="font-family: 'Helvetica';color:#fff;font-weight: bold;">Login</h1>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                User Name:
+                            </td>
+                            <td>
+                                <input type="text" name="un2" value="" required="true">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Password:
+                            </td>
+                            <td>
+                                <input type="password" name="pwd2" value="" required="true">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="submit" name="login" value="Login" id="log">
+                                <td><a href="#" style="color:#e1e80e">forget password</a></td>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js">
+</script>
+
+<!--FOR LOGIN-->
+
+<script>
+    jQuery.validator.addMethod("noSpace", function(value, element) {
+        return value == '' || value.trim().length != 0;
+    }, "NO space and dont leave empty");
+    $.validator.addMethod("alphanumeric", function(value, element) {
+        return this.optional(element) || /^\w+$/i.test(value);
+    }, "Letters, numbers, and underscores only please");
+    var $loginForm = $('#loginform');
+    if ($loginForm.length) {
+        $loginForm.validate({
+            rules: {
+                un2: {
+                    required: true,
+                    noSpace: true
+                },
+                pwd2: {
+                    required: true
+                }
+            },
+            messages: {
+                un2: {
+                    required: "enter username"
+                },
+                pwd2: {
+                    required: "enter password"
+                }
+
+            }
+        });
+    }
+</script>

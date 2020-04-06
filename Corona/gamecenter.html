@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>GameCenter | Let's Play</title>
+    <!--for text typing-->
+    <script src="https://js.cx/libs/animate.js"></script>
+    <!--for pop-up-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            background-repeat: no-repeat;
+        }
+        
+        textarea {
+            display: block;
+            border: 1px solid #111;
+            color: white;
+            text-align: center;
+            font-size: 40px;
+            margin-top: 5px;
+            background-color: black;
+            width: 99.5%;
+            height: 5%;
+        }
+        
+        #cor {
+            margin-top: 5%;
+            margin-left: 46%;
+            color: white;
+            background-color: black;
+            border: none;
+            cursor: pointer;
+        }
+        
+        img {
+            height: 300px;
+            width: 200px;
+            margin-left: 42%;
+        }
+
+    </style>
+    <style>
+        #countdown {
+            font-family: 'Oswald', sans-serif;
+            color: white;
+            font-size: 60px;
+            display: inline;
+            margin-left: 45%;
+        }
+
+    </style>
+
+</head>
+
+<body onload="Timer()">
+    <div class="body-cont">
+        <div class="headertag">
+            <textarea id="gocorona" rows="1">LET'S DEFEAT CORONA</textarea>
+            <script type="text/javascript">
+                function animateText(textArea) {
+                    let text = textArea.value;
+                    let to = text.length,
+                        from = 0;
+                    animate({
+                        duration: 5000,
+                        timing: bounce,
+                        draw: function(progress) {
+                            let result = (to - from) * progress + from;
+                            textArea.value = text.substr(0, Math.ceil(result))
+                        }
+                    });
+                }
+
+                function bounce(timeFraction) {
+                    for (let a = 0, b = 1, result; 1; a += b, b /= 2) {
+                        if (timeFraction >= (7 - 4 * a) / 11) {
+                            return -Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b, 2);
+                        }
+                    }
+                }
+
+                function bulb(value) {
+                    var pic;
+                    if (value == 0) {
+                        pic = "bulb-off.png";
+                    } else {
+                        pic = "bulb-on.png";
+                    }
+                    document.getElementById("bulb").src = pic;
+                }
+
+                function popUp() {
+                    setTimeout(function() {
+                        swal({
+                                title: "Are You Sure Want to Kill Corona?",
+                                icon: "warning",
+                                buttons: true,
+                                dangerMode: true,
+                            })
+                            .then((willDelete) => {
+                                if (willDelete) {
+                                    swal("Corona Will be Die Soon..!", {
+                                        icon: "success",
+                                    });
+                                } else {
+                                    swal("Well..!, It's An End Game.");
+                                }
+                            });
+                    },5000);
+                }
+
+                var time=60*9;
+                var min=0;
+                var sec=0;
+                function Timer(){
+                    min=parseInt(time/60);
+                    sec=parseInt(time%60);
+                    if (time<0){
+                        window.location();
+                    }
+                    document.getElementById("countdown").innerHTML=min.toString()+':'+sec.toString();
+                    time--;
+
+                    setTimeout(function(){
+                        Timer();
+                    },1000);
+                }
+
+            </script>
+
+            <img src="bulb-off.png" id="bulb">
+            <br>
+            <button id="cor" onclick="animateText(gocorona),bulb(1),popUp()">GO CORONA</button>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p id="countdown"></p>
+        </div>
+    </div>
+</body>
+
+</html>

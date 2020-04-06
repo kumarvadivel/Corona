@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Center | Home</title>
+    <style>
+        body {
+            background-size: auto;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .in-header {
+            width: 1000px;
+            height: 100%;
+            margin: auto;
+            position: relative;
+        }
+        
+        .logo-container {
+            height: 100%;
+            display: table;
+            float: left;
+        }
+        
+        .logo-container h1 {
+            color: white;
+            height: 100%;
+            display: table-cell;
+            vertical-align: middle;
+            font-family: 'Arial';
+            font-size: 32px;
+            font-weight: 100;
+            text-shadow: 2px 4px 8px #333333;
+        }
+        
+        .logo-container h1 span {
+            font-weight: 800;
+        }
+        
+        .navig {
+            float: right;
+            height: 100%;
+        }
+        
+        .navig a {
+            height: 100%;
+            display: table;
+            float: left;
+            padding: 0 20px;
+        }
+        
+        .navig a li {
+            display: table-cell;
+            vertical-align: middle;
+            height: 100%;
+            color: #fff;
+            font-family: 'Helvetica';
+            font-size: 16px;
+        }
+        
+        .btn {
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 2px 15px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .btn1 {
+            background: rgba(255, 255, 255, 0.0);
+            color: white;
+            border: 1.5px solid #fff;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .btn1:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #ad5389;
+        }
+        
+        .btn2 {
+            background: rgba(255, 0, 0, 0.0);
+            color: white;
+            border: 1.5px solid #fff;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .btn2:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #ad5389;
+        }
+        
+        .btn3 {
+            background: rgba(255, 255, 255, 0.0);
+            color: white;
+            border: 1.5px solid #fff;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        
+        .btn3:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: #ad5389;
+        }
+        
+        .body-cont {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+            background: linear-gradient(to bottom right, #c0392b, #8e44ad);
+            background-size: 400% 400%;
+            animation: gradientFade 2s ease infinite;
+        }
+        
+        @keyframes gradientFade {
+            0% {
+                background-position: 47% 0%;
+            }
+            50% {
+                background-position: 54% 100%;
+            }
+            100% {
+                background-position: 47% 0%;
+            }
+        }
+    </style>
+    <style>
+        .gamebtn {
+        	position: absolute;
+        	margin-top:20%;
+        	margin-left:17%;
+            padding: 15px 25px;
+            font-size: 24px;
+            font-family: 'courier';
+            font-weight: bold;
+            text-align: center;
+            cursor:pointer;
+            outline: none;
+            color: white;
+            background-color: red;
+            border:none;
+            border-radius: 45%;
+            box-shadow: 0 9px #999;
+        }
+        .gamebtn:hover{
+        	background-color: darkred;
+        }
+        .gamebtn:active{
+        	background-color: green;
+        	box-shadow: 0 5px #777;
+        	transform:translateY(4px);
+        }
+    </style>
+    <script type="text/javascript">
+        //document.getElementById("game-btn").addEventListener("click",gamePage);
+        function gamePage(){
+            document.getElementById("game-btn").target="_top";
+            window.open("gamecenter.html");    
+        }
+    </script>
+</head>
+
+<body>
+    <div class="fbody">
+        <div class="in-header">
+            <div class="logo-container">
+                <h1>GAME<span>SITE</span></h1>
+            </div>
+            <ul class="navig"><button class="btn btn1"><a href="home.html"><li class="active">HOME</li></a></button><button class="btn btn2"><a href="#"><li>ABOUT ME</li></a></button><button class="btn btn3"><a href="#"><li>REACH ME AT</li></a></button></ul>
+        </div>
+        <div class="body-cont" >
+            <button class="gamebtn" id="game-btn"  target="_blank" onclick="gamePage()">Let's<br>Kill<br>it</button>
+        </div>
+</body>
+
+</html>
